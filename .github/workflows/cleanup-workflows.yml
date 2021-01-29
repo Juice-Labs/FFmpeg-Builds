@@ -1,0 +1,12 @@
+name: Cleanup All Workflow Runs
+
+on:
+  workflow_dispatch:
+jobs:
+  delete-runs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Juice-Labs/purge-workflow-runs-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          expire-in: 0
